@@ -4716,7 +4716,7 @@ object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-object.values@^1.0.4, object.values@^1.1.0:
+object.values@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/object.values/download/object.values-1.1.1.tgz?cache=0&sync_timestamp=1576222019508&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fobject.values%2Fdownload%2Fobject.values-1.1.1.tgz#68a99ecde356b7e9295a3c5e0ce31dc8c953de5e"
   integrity sha1-aKmezeNWt+kpWjxeDOMdyMlT3l4=
@@ -5419,14 +5419,6 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-preload-webpack-plugin@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.npm.taobao.org/preload-webpack-plugin/download/preload-webpack-plugin-2.3.0.tgz#2923d8caff44dead93d1fe5eaab31f3b18ca0de9"
-  integrity sha1-KSPYyv9E3q2T0f5eqrMfOxjKDek=
-  dependencies:
-    object-assign "^4.1.1"
-    object.values "^1.0.4"
-
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/prelude-ls/download/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -5546,24 +5538,6 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
-
-purgecss-webpack-plugin@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.npm.taobao.org/purgecss-webpack-plugin/download/purgecss-webpack-plugin-1.6.0.tgz#7b5d6d189f5574c1365592e1445d252162404e4a"
-  integrity sha1-e11tGJ9VdME2VZLhRF0lIWJATko=
-  dependencies:
-    purgecss "^1.4.0"
-    webpack-sources "^1.4.3"
-
-purgecss@^1.4.0:
-  version "1.4.2"
-  resolved "https://registry.npm.taobao.org/purgecss/download/purgecss-1.4.2.tgz#67ab50cb4f5c163fcefde56002467c974e577f41"
-  integrity sha1-Z6tQy09cFj/O/eVgAkZ8l05Xf0E=
-  dependencies:
-    glob "^7.1.3"
-    postcss "^7.0.14"
-    postcss-selector-parser "^6.0.0"
-    yargs "^14.0.0"
 
 q@^1.1.2:
   version "1.5.1"
@@ -5846,14 +5820,6 @@ resolve@^1.12.0, resolve@^1.3.2, resolve@^1.8.1:
   integrity sha1-ngGMVA/PDEJ9Z4uZMcv0XphLyv8=
   dependencies:
     path-parse "^1.0.6"
-
-resource-hints-webpack-plugin@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npm.taobao.org/resource-hints-webpack-plugin/download/resource-hints-webpack-plugin-0.0.2.tgz#233cea158af85ef360a934a03284c46d908b7f73"
-  integrity sha1-IzzqFYr4XvNgqTSgMoTEbZCLf3M=
-  dependencies:
-    minimatch "^3.0.4"
-    object-assign "^4.1.1"
 
 restore-cursor@^3.1.0:
   version "3.1.0"
@@ -7052,7 +7018,7 @@ webpack-merge@^4.2.2:
   dependencies:
     lodash "^4.17.15"
 
-webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
+webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
   version "1.4.3"
   resolved "https://registry.npm.taobao.org/webpack-sources/download/webpack-sources-1.4.3.tgz?cache=0&sync_timestamp=1574264193174&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-sources%2Fdownload%2Fwebpack-sources-1.4.3.tgz#eedd8ec0b928fbf1cbfe994e22d2d890f330a933"
   integrity sha1-7t2OwLko+/HL/plOItLYkPMwqTM=
@@ -7199,14 +7165,6 @@ yargs-parser@^13.1.0:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs-parser@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.npm.taobao.org/yargs-parser/download/yargs-parser-15.0.0.tgz#cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08"
-  integrity sha1-zdepdJDsg2GV9Z8/Tb5eqej3Xwg=
-  dependencies:
-    camelcase "^5.0.0"
-    decamelize "^1.2.0"
-
 yargs@12.0.5:
   version "12.0.5"
   resolved "https://registry.npm.taobao.org/yargs/download/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
@@ -7241,20 +7199,3 @@ yargs@13.2.4:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.0"
-
-yargs@^14.0.0:
-  version "14.2.2"
-  resolved "https://registry.npm.taobao.org/yargs/download/yargs-14.2.2.tgz#2769564379009ff8597cdd38fba09da9b493c4b5"
-  integrity sha1-J2lWQ3kAn/hZfN04+6CdqbSTxLU=
-  dependencies:
-    cliui "^5.0.0"
-    decamelize "^1.2.0"
-    find-up "^3.0.0"
-    get-caller-file "^2.0.1"
-    require-directory "^2.1.1"
-    require-main-filename "^2.0.0"
-    set-blocking "^2.0.0"
-    string-width "^3.0.0"
-    which-module "^2.0.0"
-    y18n "^4.0.0"
-    yargs-parser "^15.0.0"
