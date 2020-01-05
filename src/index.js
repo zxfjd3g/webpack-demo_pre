@@ -51,3 +51,5 @@ async function fn2 () {
   console.log('result2', response2.data)
 }
 fn2()
+
+console.log('hello world!')

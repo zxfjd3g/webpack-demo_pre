@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{88:function(n,o,t){"use strict";function c(){alert("fn()")}t.r(o),t.d(o,"fn",(function(){return c}))}}]);

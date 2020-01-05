@@ -3,6 +3,7 @@ webpack基础配置
 */
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyrightWebpackPlugin = require('../plugins/copyright-webpack-plugin')
 const {resolve} = require('./utils')
 
 module.exports = {
@@ -20,9 +21,30 @@ module.exports = {
     path: resolve('dist'),
   },
 
+  resolveLoader: { // 指定loader查找范围
+    modules: ['node_modules', 'loaders']
+  },
+
   // 模块加载器
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        include: [resolve('src')],
+        use: [
+          {
+            // loader: resolve('loaders/replaceLoaderAsync.js'),
+            loader: 'replaceLoaderAsync.js',
+            options: {
+              name: 'xhr'
+            }
+          },
+          {
+            // loader: resolve('loaders/replaceLoader.js')
+            loader: 'replaceLoader.js'
+          }
+        ]
+      },
       {
         enforce: "pre", // 前置loader, 最先执行
         test: /\.js$/,
@@ -57,6 +79,7 @@ module.exports = {
 
   // 插件
   plugins: [
+    new CopyrightWebpackPlugin({}),
     // 提示打包进度
     new webpack.ProgressPlugin(),
     // 自动加载模块，而不必到处 import 或 require
