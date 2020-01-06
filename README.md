@@ -25,7 +25,6 @@
     stylus-loader
     node-sass
     sass-loader
-    purgecss-webpack-plugin
     webpack-bundle-analyzer
     copy-webpack-plugin
 

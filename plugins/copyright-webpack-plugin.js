@@ -2,7 +2,7 @@ class CopyrightWebpackPlugin {
   constructor(options) {
     console.log('plugin对象创建了', options)
   }
-
+  
   apply(compiler) {
     console.log('plugin apply()')
     // 同步
