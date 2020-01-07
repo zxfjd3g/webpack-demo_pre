@@ -18,7 +18,7 @@
     optimize-css-assets-webpack-plugin
     postcss-loader
     autoprefixer
-    postcss-pxtorem
+    postcss-px2rem
     less
     less-loader
     stylus
@@ -27,6 +27,19 @@
     sass-loader
     webpack-bundle-analyzer
     copy-webpack-plugin
+    axios
+    jquery
+    lodash-es
+
+    vue 
+    vue-loader
+    vue-template-compiler
+    vue-router
+    vuex
+    mint-ui
+    babel-plugin-component
+    
+
 
 ## 相关问题
     1). 区别wepack的2个工具包: webpack与webpack-cli?

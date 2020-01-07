@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseConfig = require('./webpack.base.config')
+const {resolve} = require('./utils')
 
 const config = {
 
@@ -23,7 +24,7 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          'vue-style-loader',
           'css-loader',
           'postcss-loader'
         ]
@@ -31,7 +32,7 @@ const config = {
       {
         test: /\.less$/,
         use: [
-          'style-loader',
+          'vue-style-loader',
           'css-loader',
           'postcss-loader',
           'less-loader'
@@ -40,7 +41,7 @@ const config = {
       {
         test: /\.styl$/,
         use: [
-          'style-loader',
+          'vue-style-loader',
           'css-loader',
           'postcss-loader',
           'stylus-loader'
@@ -90,6 +91,24 @@ const config = {
 
   // source-map调试
   devtool: 'cheap-module-inline-source-map',
+
+  resolve: {
+    extensions: ['.js', '.vue'],
+    alias: {
+      /* 
+      不建议使用, 导致打包文件变大(包含模板编译代码)
+      */
+      // 'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+      '@components': resolve('src/components'),
+    }
+  },
+
+  // externals:{
+  //   'vue': 'Vue',
+  //   'vue-router': 'VueRouter',
+  //   'vuex':'Vuex',
+  // },
 }
 
 module.exports = merge(baseConfig, config)

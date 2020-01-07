@@ -15,7 +15,16 @@ module.exports = function (api) {
       }
     ]
   ];
-  const plugins = ['@babel/plugin-transform-runtime'];
+  const plugins = [
+    '@babel/plugin-transform-runtime',
+    [
+      "babel-plugin-component", 
+      {
+        "libraryName": "mint-ui", // 针对mint-ui来实现按需引入打包
+        "style": true  // 自动打包组件对应的样式
+      }
+    ]
+  ];
 
   return {
     presets,
