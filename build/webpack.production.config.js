@@ -1,13 +1,15 @@
 /* 
 webpack生产环境配置
 */
-
+const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+
 const baseConfig = require('./webpack.base.config')
 
 
@@ -76,7 +78,20 @@ const config = {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
-    })
+    }),
+
+    // 引用动态链接库
+    new webpack.DllReferencePlugin({
+        // context: path.resolve(__dirname, '..'),
+        manifest: require('../public/dll_static/vendor.manifest')
+    }),
+    // 文件动态添加到html中
+    new AddAssetHtmlPlugin([{
+      filepath: path.resolve(__dirname,'../public/dll_static/*.js'),
+      outputPath: 'dll_static',
+      publicPath: 'dll_static',
+      includeSourcemap: false
+    }]),
   ],
 
   // source-map调试  
