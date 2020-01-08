@@ -1,5 +1,5 @@
 /* 
-链式引用预编译三方库
+链式引用预编译第三方库
 */
 
 const webpack = require("webpack")

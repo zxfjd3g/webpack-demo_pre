@@ -87,8 +87,8 @@ const config = {
 
     // 引用动态链接库
     new webpack.DllReferencePlugin({
-        // context: path.resolve(__dirname, '..'),
-        manifest: require('../public/dll_static/vendor.manifest')
+      // context: path.resolve(__dirname, '..'),
+      manifest: require('../public/dll_static/vendor.manifest')
     }),
     // 文件动态添加到html中
     new AddAssetHtmlPlugin([{
