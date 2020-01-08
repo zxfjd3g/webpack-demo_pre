@@ -101,7 +101,7 @@ module.exports = {
       {
         from: resolve('public'),
         to: resolve('dist'),
-        ignore: ['index.html']
+        ignore: ['index.html', 'dll_static']
       }
     ]),
     new VueLoaderPlugin(),

@@ -1,10 +1,11 @@
 /* 
 webpack生产环境配置
 */
+const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
@@ -59,13 +60,17 @@ const config = {
   // 插件
   plugins: [
     // 清除打包根目录
-    new CleanWebpackPlugin(), 
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '..')
+    }), 
     // 将css从js中拆分出来单独打包
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css'
     }),
     // 压缩单独打包的css
-    new OptimizeCssAssetsPlugin({}),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'), // 这里制定了引擎，不指定默认也是 cssnano 
+    }),
 
     new HtmlWebpackPlugin({
       template: 'public/index.html',
@@ -89,7 +94,7 @@ const config = {
     new AddAssetHtmlPlugin([{
       filepath: path.resolve(__dirname,'../public/dll_static/*.js'),
       outputPath: 'dll_static',
-      publicPath: 'dll_static',
+      publicPath: '/dll_static',
       includeSourcemap: false
     }]),
   ],
