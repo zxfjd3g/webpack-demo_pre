@@ -27,33 +27,7 @@ const config = {
   // 模块加载器
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, // 对css单独打包的loader
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader, 
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
-      },
-
-      {
-        test: /\.styl$/,
-        use: [
-          MiniCssExtractPlugin.loader, 
-          'css-loader',
-          'postcss-loader',
-          'stylus-loader'
-        ]
-      },
+      
     ]
   },
 

@@ -21,32 +21,7 @@ const config = {
   // 模块加载器
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
-      },
-      {
-        test: /\.styl$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'postcss-loader',
-          'stylus-loader'
-        ]
-      },
+     
     ]
   },
 
@@ -77,11 +52,11 @@ const config = {
     },
     // 配置代理, 解决ajax跨域问题
     proxy: {
-      '/api_github': {
-        target: 'https://api.github.com',
+      '/api': {
+        target: 'http://localhost:4000',
         changeOrigin: true,
         pathRewrite: {
-          '^/api_github': ''
+          '^/api': ''
         }
       }
     },
@@ -98,7 +73,7 @@ const config = {
       /* 
       不建议使用, 导致打包文件变大(包含模板编译代码)
       */
-      // 'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       '@components': resolve('src/components'),
     }
